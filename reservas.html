@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas - Club La Terraza</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/estilosreservas.css">
+    
+</head>
+<body>
+
+    <h1>Reserva tu Mesa</h1>
+    <div class="reservation-form">
+        <form action="#" method="POST">
+            <!-- Nombre del cliente -->
+            <div class="form-group">
+                <label for="name">Nombre completo:</label>
+                <input type="text" id="name" name="name" required placeholder="Tu nombre">
+            </div>
+
+            <!-- Número de personas -->
+            <div class="form-group">
+                <label for="people">Número de personas:</label>
+                <input type="number" id="people" name="people" required min="1" max="10" placeholder="Cantidad de personas">
+            </div>
+
+            <!-- Selección de mesa -->
+            <div class="form-group">
+                <label for="table">Selecciona una mesa:</label>
+                <select id="table" name="table" required>
+                    <option value="">-- Elige una mesa --</option>
+                    <!-- Mesas 1 a 30 -->
+                    <option value="Mesa 1">Mesa 1</option>
+                    <option value="Mesa 2">Mesa 2</option>
+                    <option value="Mesa 3">Mesa 3</option>
+                    <option value="Mesa 4">Mesa 4</option>
+                    <option value="Mesa 5">Mesa 5</option>
+                    <option value="Mesa 6">Mesa 6</option>
+                    <option value="Mesa 7">Mesa 7</option>
+                    <option value="Mesa 8">Mesa 8</option>
+                    <option value="Mesa 9">Mesa 9</option>
+                    <option value="Mesa 10">Mesa 10</option>
+                    <option value="Mesa 11">Mesa 11</option>
+                    <option value="Mesa 12">Mesa 12</option>
+                    <option value="Mesa 13">Mesa 13</option>
+                    <option value="Mesa 14">Mesa 14</option>
+                    <option value="Mesa 15">Mesa 15</option>
+                    <option value="Mesa 16">Mesa 16</option>
+                    <option value="Mesa 17">Mesa 17</option>
+                    <option value="Mesa 18">Mesa 18</option>
+                    <option value="Mesa 19">Mesa 19</option>
+                    <option value="Mesa 20">Mesa 20</option>
+                    <option value="Mesa 21">Mesa 21</option>
+                    <option value="Mesa 22">Mesa 22</option>
+                    <option value="Mesa 23">Mesa 23</option>
+                    <option value="Mesa 24">Mesa 24</option>
+                    <option value="Mesa 25">Mesa 25</option>
+                    <option value="Mesa 26">Mesa 26</option>
+                    <option value="Mesa 27">Mesa 27</option>
+                    <option value="Mesa 28">Mesa 28</option>
+                    <option value="Mesa 29">Mesa 29</option>
+                    <option value="Mesa 30">Mesa 30</option>
+                </select>
+            </div>
+
+            <!-- Hora de reserva -->
+            <div class="form-group">
+                <label for="time">Hora de la reserva:</label>
+                <input type="time" id="time" name="time" required>
+            </div>
+
+            <!-- Enviar formulario -->
+            <div class="form-group">
+                <input type="submit" value="Hacer Reserva">
+            </div>
+        </form>
+
+        <!-- Enlace para volver a la página principal -->
+        <div class="back-to-home2">
+            <a href="index.html" class="back-btn2">Volver al inicio</a>
+        </div>
+    </div>
+
+</body>
+</html>

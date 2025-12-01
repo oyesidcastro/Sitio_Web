@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider Moderno</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f3f3;
+        }
+
+        #slider-container {
+            position: relative;
+            width: 1200px;
+            height: 900px;
+            margin: 50px auto;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 300%; /* Tres imágenes */
+        }
+
+        .slide {
+            flex: 1 0 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+        }
+
+        .slide img {
+            width: 1200px;
+            height: 900px;
+            object-fit: cover; /* Ajusta la imagen al contenedor sin distorsión */
+            border-radius: 10px; /* Opcional: redondeo de bordes */
+        }
+
+        /* Botones de navegación */
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            font-size: 2rem;
+            padding: 10px 20px;
+            cursor: pointer;
+            z-index: 10;
+            border-radius: 5px;
+        }
+
+        .nav-button:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .nav-prev {
+            left: 20px;
+        }
+
+        .nav-next {
+            right: 20px;
+        }
+
+        /* Indicadores */
+        .indicators {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .indicator.active {
+            background: rgba(255, 255, 255, 0.9);
+        }
+    </style>
+</head>
+<body>
+    <div id="slider-container">
+        <div class="slides">
+            <div class="slide">
+                <a href="menurestaurante.html" target="_blank">
+                    <img src="images/restaurant.avif" alt="Restaurante">
+                </a>
+            </div>
+            <div class="slide">
+                <a href="menubar.html" target="_blank">
+                    <img src="images/bar.avif" alt="Bar">
+                </a>
+            </div>
+            <div class="slide">
+                <a href="reservas.html" target="_blank">
+                    <img src="reservas.png" alt="Reservas">
+                </a>
+            </div>
+        </div>
+        <button class="nav-button nav-prev">&#10094;</button>
+        <button class="nav-button nav-next">&#10095;</button>
+        <div class="indicators">
+            <span class="indicator" data-index="0"></span>
+            <span class="indicator" data-index="1"></span>
+            <span class="indicator" data-index="2"></span>
+        </div>
+    </div>
+
+    <script>
+        const slides = document.querySelector('.slides');
+        const slideCount = document.querySelectorAll('.slide').length;
+        const indicators = document.querySelectorAll('.indicator');
+        const prevButton = document.querySelector('.nav-prev');
+        const nextButton = document.querySelector('.nav-next');
+        let currentIndex = 0;
+        let slideInterval;
+
+        // Función para cambiar de slide
+        function goToSlide(index) {
+            slides.style.transform = `translateX(-${index * 100}%)`;
+            indicators.forEach(indicator => indicator.classList.remove('active'));
+            indicators[index].classList.add('active');
+            currentIndex = index;
+        }
+
+        // Botón anterior
+        prevButton.addEventListener('click', () => {
+            const index = currentIndex === 0 ? slideCount - 1 : currentIndex - 1;
+            goToSlide(index);
+        });
+
+        // Botón siguiente
+        nextButton.addEventListener('click', () => {
+            const index = currentIndex === slideCount - 1 ? 0 : currentIndex + 1;
+            goToSlide(index);
+        });
+
+        // Indicadores
+        indicators.forEach(indicator => {
+            indicator.addEventListener('click', () => {
+                const index = Number(indicator.getAttribute('data-index'));
+                goToSlide(index);
+            });
+        });
+
+        // Reproducción automática
+        function startSlideShow() {
+            slideInterval = setInterval(() => {
+                const index = (currentIndex + 1) % slideCount;
+                goToSlide(index);
+            }, 3000);
+        }
+
+        function stopSlideShow() {
+            clearInterval(slideInterval);
+        }
+
+        // Iniciar en la carga
+        document.addEventListener('DOMContentLoaded', () => {
+            goToSlide(0);
+            startSlideShow();
+
+            // Pausar reproducción automática al pasar el mouse
+            const slider = document.getElementById('slider-container');
+            slider.addEventListener('mouseenter', stopSlideShow);
+            slider.addEventListener('mouseleave', startSlideShow);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Club La Terraza — Restaurante & Música en vivo</title>
+<link rel="stylesheet" href="css/estilos.css">
+<!-- <link rel="stylesheet" href="css/estilosmenus.css"> -->
+</head>
+<body>
+    <header> 
+        <h1 class="hero-title">CLUB LA TERRAZA</h1> 
+        <!-- Barra de navegación fija -->
+        <nav class="navbar">
+            <ul class="navbar-list">
+                <li><a href="#about">¿QUIENES SOMOS?</a></li>
+                <li><a href="#contact">CONTACTO</a></li>
+                <li><a href="menus.html">MENÚ</a></li>
+                <li><a href="reservas.html">RESERVAS</a></li>
+                <li><a href="unirse.html">UNIRSE</a></li>
+                <li><a href="login.html">LOGIN</a></li>
+                <li><a href="experiencias.html">EXPERIENCIAS</a></li>
+            </ul>
+        </nav>
+    </header>
+<!-- Materialize JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<script>
+    // Inicializar menú móvil
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.sidenav');
+        M.Sidenav.init(elems);
+    });
+</script>
+    <section id="slidecontaniner">
+      <div class="wrapper">
+          <div class="slider" id="slider">
+              <ul class="slides" >
+                  <li class="slide" id="slide1">
+                      <a href="menurestaurante.html" target="_blank">
+                        <img src="images/restaurant.avif" alt="photo 1"></a>
+                  </li>
+                  <li class="slide" id="slide2">
+                      <a href="menubar.html" target="_blank">
+                          <img src="images/bar.avif" alt="photo 2">
+                      </a>
+                  </li>
+                  <li class="slide" id="slide3">
+                      <a href="reservas.html" target="_blank">
+                          <img src="reservas.png" alt="photo 3">
+                      </a>
+                  </li>
+              </ul>
+              <ul class="slider-controler">
+                  <li><a href="#slide1">&bullet;</a></li>
+                  <li><a href="#slide2">&bullet;</a></li>
+                  <li><a href="#slide3">&bullet;</a></li>
+              </ul>
+          </div>
+      </div> 
+  </section>
+  
+  <section id="about" style="text-align: center; padding: 40px 20px; background-color: #080808;">
+
+    <!-- Título de la sección -->
+    <h2 style="font-family: 'Arial', sans-serif; font-size: 36px; color: #d8cfcf; text-transform: uppercase; letter-spacing: 2px;">¿Quiénes Somos?</h2>
+    
+    <!-- Descripción de la sección -->
+    <p style="font-family: 'Arial', sans-serif; font-size: 18px; color: #555; max-width: 800px; margin: 20px auto; line-height: 1.6;">
+        Bienvenido a <strong>Club La Terraza</strong>, un lugar único donde disfrutar de una excelente comida, bebidas refrescantes y la mejor música en vivo. 
+        Si buscas una experiencia diferente, ¡este es el lugar para ti! Ofrecemos un menú delicioso y una amplia carta de bebidas, pero lo que realmente nos hace especiales son nuestros grupos musicales en vivo. Cada noche, un nuevo grupo musical sube al escenario para sorprenderte con su talento y hacer que tu noche sea inolvidable. 
+    </p>
+
+    <p style="font-family: 'Arial', sans-serif; font-size: 18px; color: #555; max-width: 800px; margin: 20px auto; line-height: 1.6;">
+        Ven y vive la experiencia de saborear nuestros platos mientras el ritmo de la música llena el ambiente. ¡Crea recuerdos especiales con amigos, familia o esa persona especial!
+    </p>
+
+    <!-- Horario -->
+    <div style="margin-top: 40px; background-color: #3a3939; color: white; padding: 20px; border-radius: 10px; width: 80%; max-width: 500px; margin-left: auto; margin-right: auto;">
+        <h2 style="font-family: 'Arial', sans-serif; font-size: 24px; margin-bottom: 10px;">Horario de Atención</h2>
+        <p style="font-family: 'Arial', sans-serif; font-size: 18px; color: white;">Sábados, domingos y festivos: 1:00 PM - 2:00 AM</p>
+    </div>
+
+    <!-- Ubicación -->
+    <div style="margin-top: 40px;">
+        <h2 style="font-family: 'Arial', sans-serif; font-size: 36px; color: #d8cfcf; text-transform: uppercase; letter-spacing: 2px;">Ubicación</h2>
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.0249471678185!2d-73.12749652381545!3d7.123106244610433!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e68157db80b815b%3A0x7bda629a47643f75!2sCl.%2029%20%2315-81%2C%20Comuna%204%20Occidental%2C%20Bucaramanga%2C%20Santander!5e0!3m2!1ses-419!2sco!4v1731442310367!5m2!1ses-419!2sco"
+            width="100%" height="450" style="border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+
+</section>
+
+
+    <section id="contact" style="text-align: center; padding: 40px 20px; background-color: #000000;">
+        <h2 style="font-family: 'Arial', sans-serif; font-size: 36px; color: #d8cfcf; text-transform: uppercase; letter-spacing: 2px;">CONTÁCTANOS</h2>
+        
+        <p style="font-family: 'Arial', sans-serif; font-size: 18px; color: #555; max-width: 800px; margin: 20px auto; line-height: 1.6;">
+            Siguenos en nuestras redes sociales
+        </p>
+
+  
+      <div class="social-links">
+          <a href="https://www.facebook.com/tu_perfil" target="_blank">
+              <img src="facebook.png" alt="Facebook">
+          </a>
+          <a href="https://www.instagram.com/clubdecarrangalaterraza" target="_blank">
+              <img src="instagram.png" alt="Instagram">
+          </a>
+          <a href="https://www.linkedin.com/in/tu_usuario" target="_blank">
+              <img src="tiktok.png" alt="TikTok">
+          </a>
+          <a href="https://www.youtube.com/c/tu_canal" target="_blank">
+              <img src="whatsapp.png" alt="WhatsApp">
+          </a>
+      </div>
+  </section>
+  
+  
+</body>
+</html>

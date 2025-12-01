@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MENÚ DEL RESTAURANTE</title>
+    <link rel="stylesheet" href="css/estilos.css">
+
+    <section class="back-to-home">
+        <a href="menus.html" class="back-btn3">VOLVER ATRÁS</a>
+        <a href="index.html" class="back-btn2">VOLVER Al INICIO</a>
+        <a href="menubar.html" class="back-btn3">MENÚ DEL BAR</a>
+    </section>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        /* Contenedor para la tabla */
+        .table-container {
+            width: 100%;
+            max-width: 800px; /* Ancho máximo de la tabla */
+            margin: 0 auto; /* Centra el contenedor */
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #ff0000;
+            color: white;
+        }
+
+        td {
+            background-color: #fff;
+        }
+
+        .price {
+            color: #000000;
+            font-weight: bold;
+        }
+
+        /* Estilo de los botones */
+        .back-to-home {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            margin: 10px;
+            text-decoration: none;
+            font-size: 1rem;
+            color: white;
+            background-color: #000000;
+            border-radius: 5px;
+            text-align: center;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .back-btn:hover {
+            background-color: #000000;
+            transform: translateY(-3px); /* Efecto de elevación */
+        }
+
+        .back-btn:active {
+            transform: translateY(1px); /* Bajada ligera al hacer clic */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>MENÚ DE COMIDAS</h1>
+
+    <!-- Contenedor para la tabla -->
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>PRODUCTO</th>
+                    <th>PRECIO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>HAMBURGUESA</td>
+                    <td><span class="price">$22.000</span></td>
+                </tr>
+                <tr>
+                    <td>PIZZA</td>
+                    <td><span class="price">$7.000</span></td>
+                </tr>
+                <tr>
+                    <td>PERRO CALIENTE</td>
+                    <td><span class="price">$14.000</span></td>
+                </tr>
+                <tr>
+                    <td>PAPAS LOCAS</td>
+                    <td><span class="price">$24.000</span></td>
+                </tr>
+                <tr>
+                    <td>CARNE A LA PLANCHA</td>
+                    <td><span class="price">$16.000</span></td>
+                </tr>
+                <tr>
+                    <td>PECHUGA A LA PLANCHA</td>
+                    <td><span class="price">$15.000</span></td>
+                </tr>
+                <tr>
+                    <td>EMPANADAS</td>
+                    <td><span class="price">$3.000</span></td>
+                </tr>
+                <tr>
+                    <td>PICADA PARA DOS PERSONAS</td>
+                    <td><span class="price">$25.000</span></td>
+                </tr>
+                <tr>
+                    <td>PICADA FAMILIAR</td>
+                    <td><span class="price">$45.000</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

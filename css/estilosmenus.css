@@ -1,0 +1,105 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Estilo para la sección de selección de menú */
+.menu-selection {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+    flex-wrap: wrap; /* Para que se acomoden bien en pantallas pequeñas */
+}
+
+/* Estilos para los links con imágenes */
+a.menu-box {
+    width: 600px;
+    height: 600px;
+    display: block;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+a.menu-box:hover {
+    transform: scale(1.05); /* Efecto al pasar el cursor sobre las imágenes */
+}
+
+/* Letrero de texto sobre la imagen */
+a.menu-box::after {
+    content: attr(alt); /* Obtiene el texto desde el atributo alt */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px; /* Aumentar aún más el tamaño del texto */
+    color: white;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-align: center;
+    padding: 10px; /* Espaciado alrededor del texto */
+    text-shadow:
+        1px 1px 0 #000,   /* Sombra superior izquierda */
+        -1px -1px 0 #000, /* Sombra inferior derecha */
+        1px -1px 0 #000,  /* Sombra inferior izquierda */
+        -1px 1px 0 #000;  /* Sombra superior derecha */
+    background-color: rgba(0, 0, 0, 0.4); /* Fondo oscuro detrás del texto para mejorar visibilidad */
+}
+
+/* Efectos de hover en el texto */
+a.menu-box:hover::after {
+    color: #ff0000; /* Color dorado al pasar el cursor */
+    text-shadow: 
+        2px 2px 0 #000,   /* Sombra superior izquierda */
+        -2px -2px 0 #000, /* Sombra inferior derecha */
+        2px -2px 0 #000,  /* Sombra inferior izquierda */
+        -2px 2px 0 #000;  /* Sombra superior derecha */
+    border-color: #ffcc00; /* Cambia el borde a dorado en hover */
+}
+
+/* Estilos para los contenidos (tabla y otros elementos si los hay) */
+.menu-content {
+    display: none;
+    margin-top: 30px;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #007BFF;
+    color: white;
+}
+
+td {
+    background-color: #fff;
+}
+
+.price {
+    color: #28a745;
+    font-weight: bold;
+}

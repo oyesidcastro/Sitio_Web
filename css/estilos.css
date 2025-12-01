@@ -1,0 +1,525 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    /* Fuente personalizada */
+    font-size: 6rem;
+    /* Tamaño grande */
+    font-weight: bold;
+    /* Negrita */
+    text-align: center;
+    /* Centrado */
+    color: white;
+    /* Color blanco */
+    margin-top: 75px;
+    /* Espaciado superior de 50px */
+    margin-bottom: 20px;
+    /* Mantén el margen inferior como estaba */
+    border: 5px solid hsl(0, 83%, 50%);
+    /* Borde de 5px, color azul */
+    padding: 20px;
+    /* Espaciado interno para que el texto no toque el borde */
+    border-radius: 10px;
+    /* Bordes redondeados (opcional) */
+    box-shadow: 0 4px 10px rgba(211, 12, 12, 0.1);
+    /* Sombra sutil alrededor del borde */
+}
+
+.hero-title {
+    position: relative;
+    background: linear-gradient(to bottom, #111, #7e2929);
+    color: white;
+    text-align: center;
+    padding: 100px 20px 50px;
+    text-shadow: 0 0 5px #fff, 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000, 0 0 40px #ff0000, 0 0 55px #ff0000, 0 0 75px #ff0000;
+    animation: glow 1.5s infinite alternate;
+}
+
+.hero-title h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin: 0;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px #fff, 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000, 0 0 40px #ff0000, 0 0 55px #ff0000, 0 0 75px #ff0000;
+    }
+
+    to {
+        text-shadow: 0 0 10px #fff, 0 0 20px #ff0000, 0 0 30px #ff0000, 0 0 40px #ff0000, 0 0 50px #ff0000, 0 0 65px #ff0000, 0 0 100px #ff0000;
+    }
+}
+
+/* Resto de tus estilos CSS */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #030e04;
+}
+
+#about {
+    background-color: #030e04;
+}
+
+header {
+    background: #030e04;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: rgb(255, 0, 0);
+    color: rgb(255, 253, 253);
+}
+
+#about {
+    padding: 20px;
+    background: #f4f4f4;
+}
+
+#about h2 {
+    margin-top: 0;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.project {
+    width: 300px;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.project img {
+    max-width: 100%;
+    height: auto;
+}
+
+#contact {
+    padding: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-bottom: 5px;
+}
+
+form input,
+form textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+form input[type="submit"] {
+    background: #252525;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .contenedor {
+        flex-direction: column;
+    }
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+
+    10% {
+        transform: translateX(0);
+    }
+
+    15% {
+        transform: translateX(-100%);
+    }
+
+    30% {
+        transform: translateX(-100%);
+    }
+
+    35% {
+        transform: translateX(-200%);
+    }
+
+    50% {
+        transform: translateX(-200%);
+    }
+
+    55% {
+        transform: translateX(-300%);
+    }
+
+    70% {
+        transform: translateX(-300%);
+    }
+
+    75% {
+        transform: translateX(-400%);
+    }
+
+    90% {
+        transform: translateX(-400%);
+    }
+
+    95% {
+        transform: translateX(-500%);
+    }
+
+    100% {
+        transform: translateX(-500%);
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.slider {
+    position: relative;
+}
+
+.slides {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+}
+
+.slide {
+    width: 100vw;
+    flex-shrink: 0;
+    animation-name: slide;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.slides:hover .slide {
+    animation-play-state: paused;
+}
+
+.slide img {
+    width: 1200px;
+    /* Ocupa todo el ancho disponible */
+    height: 900px;
+    /* Altura fija para todas las imágenes */
+    object-fit: cover;
+    /* Recorta la imagen si es necesario para llenar el contenedor */
+}
+
+.slide a {
+    width: 100%;
+    display: inline-block;
+    position: relative;
+}
+
+.caption {
+    color: white;
+    text-shadow: 1px 1px black;
+    font-size: 8vw;
+    position: absolute;
+    bottom: 8vw;
+    right: 4vw;
+}
+
+.slide:target {
+    animation-name: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 50;
+}
+
+.slider-controler {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+}
+
+.slider-controler li {
+    margin: 0 0.5rem;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.slider-controler a {
+    display: inline-block;
+    vertical-align: top;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+}
+
+@media only screen and (min-width: 1200px) {
+    .slide {
+        width: 1200px;
+    }
+
+    .caption {
+        font-size: 96px;
+        bottom: 96px;
+        right: 50px;
+    }
+}
+
+#slidecontaniner {
+    margin-top: 0%;
+    background-color: rgba(0, 0, 0, 0.877);
+    margin: 0%;
+    padding: 0%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-bottom: 5px;
+    font-size: x-large;
+}
+
+form option {
+    margin-bottom: 5px;
+    font-size: large;
+}
+
+form input,
+form textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+form input[type="submit"] {
+    background: rgb(228, 221, 221);
+    color: rgb(237, 225, 225);
+    border: none;
+    cursor: pointer;
+}
+
+/* Estilos básicos para la sección de contacto */
+#contact {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#contact p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Estilos para los iconos de redes sociales */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.social-links a {
+    display: inline-block;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    /* Efectos de transición */
+}
+
+.social-links img {
+    width: 60px;
+    /* Ajustamos el tamaño de los íconos */
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    /* Iconos redondeados */
+    border: 3px solid #fff;
+    /* Borde blanco para destacar */
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    /* Efectos de transición */
+}
+
+/* Efectos de hover */
+.social-links a:hover img {
+    transform: scale(1.1);
+    /* Escala los iconos al hacer hover */
+    background-color: #0c0b0b;
+    /* Fondo rojo al hacer hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* Sombra al pasar el mouse */
+    border-color: #ffffff;
+    /* Cambia el borde a rojo */
+}
+
+/* Media queries para móviles */
+@media (max-width: 768px) {
+    .social-links {
+        gap: 15px;
+        /* Reducimos el espacio entre los íconos en pantallas pequeñas */
+    }
+
+    .social-links img {
+        width: 50px;
+        /* Reducimos el tamaño de los iconos en pantallas pequeñas */
+        height: 50px;
+    }
+}
+
+/* Estilos para el botón "Volver al inicio" */
+.back-to-home {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.back-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #ff0000;
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.back-btn:hover {
+    background-color: #000000;
+}
+
+.back-to-home2 {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.back-btn2 {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #ff0000;
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.back-btn:hover2 {
+    background-color: #000000;
+}
+
+.back-btn3 {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #585151;
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.back-btn3:hover3 {
+    background-color: #000000;
+}
+
+/* Barra de navegación fija */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-list {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-list li {
+    padding: 15px 20px;
+}
+
+.navbar-list a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
