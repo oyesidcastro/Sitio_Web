@@ -1,0 +1,140 @@
+-- ==========================================================
+-- SCRIPT DE CREACIÓN DE BASE DE DATOS: bd_inventario
+-- MySQL Workbench
+-- ==========================================================
+-- ----------------------------------------------------------
+-- 1. Tabla EMPLEADO
+-- Almacena información de los usuarios del sistema.
+-- ----------------------------------------------------------
+CREATE database bd_inventario;  
+use bd_inventario;
+create table empleado(
+  id_empleado int primary key auto_increment,
+  nombre varchar(100) not null,
+  rol varchar(50) not null,
+  usuario varchar(50) not null unique,
+  contrasena_hash varchar(255) not null
+);
+-- ----------------------------------------------------------
+-- 2. Tabla CLIENTE
+-- Almacena información de los clientes para facturación.
+-- ----------------------------------------------------------
+use bd_inventario;
+create table cliente(
+  id_cliente int primary key auto_increment,
+  nombre varchar(100) not null,
+  direccion varchar(200) not null,
+  telefono bigint not null,
+  email varchar(100) not null unique
+);
+
+-- ----------------------------------------------------------
+-- 3. Tabla FACTURA
+-- Almacena los encabezados de las transacciones de venta.
+-- ----------------------------------------------------------
+use bd_inventario;
+create table factura(
+  id_factura int primary key auto_increment,
+  fecha datetime not null,
+  total decimal(10,2) not null,
+  id_cliente int,
+  id_empleado int 
+);
+. -- ----------------------------------------------------------
+-- 4. Claves Foráneas para la tabla FACTURA
+-- ----------------------------------------------------------
+alter table factura
+add constraint fk_facturas_cliente
+foreign key (id_cliente)
+references cliente (id_cliente);
+
+alter table factura
+add constraint fk_facturas_empleado
+foreign key (id_empleado)
+references empleado (id_empleado);
+-- ----------------------------------------------------------
+-- 5. Tabla DETALLE_FACTURA
+-- Almacena los ítems de cada factura (relación muchos a muchos entre Factura y Producto).
+-- ----------------------------------------------------------
+
+create table detalle_factura(
+id_detalle int primary key auto_increment,
+cantidad int not null,
+precio_unitario decimal(10,2) not null,
+subtotal decimal (10,2) not null,
+id_factura int,
+id_producto int
+);
+-- ----------------------------------------------------------
+-- 6. Claves Foráneas para la tabla DETALLE_FACTURA
+-- ----------------------------------------------------------
+alter table detalle_factura
+add constraint fk_detalle_factura
+foreign key (id_factura)
+references factura (id_factura);
+
+alter table detalle_factura
+add constraint fk_detalle_producto
+foreign key (id_producto)
+references producto (id_producto);
+-- ----------------------------------------------------------
+-- 7. Tabla PRODUCTO
+-- Almacena la información detallada de cada artículo.
+-- ----------------------------------------------------------
+create table producto(
+  id_producto int primary key auto_increment,
+  nombre varchar(100) not null,
+  descripcion text not null,
+  precio_compra decimal(10,2),
+  precio_venta decimal(10,2),
+  stok int,
+  id_categoria int,
+  id_proveedor int
+  );
+-- ----------------------------------------------------------
+-- 8. Tabla CATEGORIA
+-- Almacena las categorías a las que pertenecen los productos.
+-- ----------------------------------------------------------
+create table categoria(
+id_categoria int primary key auto_increment,
+nombre varchar (100) not null
+);
+-- ----------------------------------------------------------
+-- 9. Tabla PROVEEDOR
+-- Almacena información de los proveedores de productos.
+-- ----------------------------------------------------------
+create table proveedor(
+  id_proveedor int primary key auto_increment,
+  nombre varchar(100) not null,
+  direccion varchar(200) not null,
+  telefono bigint not null,
+  email varchar(100) not null unique
+);
+-- ----------------------------------------------------------
+-- 10. Tabla INVENTARIO
+-- Control de stock específico por producto.
+-- ----------------------------------------------------------
+  create table inventario(
+id_inventario int primary key auto_increment,
+id_producto int,
+stock_actual int not null,
+stock_minimo int not null,
+stock_maximo int not null
+);
+. -- ----------------------------------------------------------
+-- 11. Claves Foráneas para la tabla Producto
+-- ----------------------------------------------------------
+alter table producto
+add constraint fk_producto_categoria
+foreign key (id_categoria)
+references categoria (id_categoria);
+
+alter table producto
+add constraint fk_producto_proveedor
+foreign key (id_proveedor)
+references proveedor (id_proveedor);
+
+alter table inventario
+add constraint fk_inventario_producto
+foreign key (id_producto)
+references producto (id_producto);
